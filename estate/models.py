@@ -8,7 +8,7 @@ class Estate(models.Model):
     units_per_floor = models.IntegerField()
 class Unit(models.Model):
     name = models.TextField()
-    phone = models.PhoneNumberField()
+    phone = models.TextField()
     estate = models.ForeignKey("Estate", on_delete=models.CASCADE)
     floor = models.IntegerField()
     number = models.IntegerField()
