@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 # Create your models here.
-class (models.Model):
+class Wallet(models.Model):
     total = models.IntegerField()
     total_offline_collected = models.IntegerField()
     total_online_collected = models.IntegerField()

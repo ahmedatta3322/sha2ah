@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'utilities',
     'estate',
     'invoice',
-    'contract'
+    'contract',
+    'wallet'
 ]
 
 MIDDLEWARE = [
