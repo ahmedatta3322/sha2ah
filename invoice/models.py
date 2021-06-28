@@ -3,7 +3,7 @@ from django.db.models.base import Model
 from django.urls import reverse
 # Create your models here.
 class Invoice(models.Model):
-    unit = models.ForeignKey("Estate.Unit", on_delete=models.CASCADE)
+    unit = models.ForeignKey("estate.Unit", on_delete=models.CASCADE)
     statulist = [
         ('pending','pending'),
         ('paid','paid'),
