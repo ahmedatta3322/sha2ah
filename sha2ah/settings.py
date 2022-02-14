@@ -148,5 +148,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if "DYNO" in os.environ:
     STATIC_ROOT = "static"
-    ALLOWED_HOSTS = ["https://guarded-scrubland-74784.herokuapp.com"]
+    ALLOWED_HOSTS = ["guarded-scrubland-74784.herokuapp.com"]
     DEBUG = True
