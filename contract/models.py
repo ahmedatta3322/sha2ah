@@ -15,6 +15,10 @@ class Contract(models.Model):
     date_to = models.DateField(auto_now=False, auto_now_add=False)
     first_rent_due_date = models.DateField(auto_now=False, auto_now_add=False)
     notes = models.TextField()
+class Document(models.Model):
+    contract = models.ForeignKey("Contract",  on_delete=models.CASCADE)
+    type = models.CharField(choices=[('rent','rent'),('investment' , 'investment')], max_length=50)
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
     def __str__(self):
         return self.name
 
