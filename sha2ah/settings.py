@@ -96,7 +96,7 @@ DATABASES = {
         "NAME": "sha2ah",
         "USER": "postgres",
         "PASSWORD": "ahmedloa2002",
-        "HOST": "127.0.0.1",
+        "HOST": "postgres://reaoxbfpljnxnk:25a99648d67d39abb646eea776258a11e91462b06ac944b9dba7a0e21bba9406@ec2-3-224-157-224.compute-1.amazonaws.com:5432/d7mt63je06bjrc",
         "PORT": "5432",
     }
 }
