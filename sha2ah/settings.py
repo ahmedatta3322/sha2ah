@@ -33,7 +33,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
     "grappelli",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -54,35 +53,9 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ]
 }
-=======
-    'grappelli',
-    'rest_framework',
-    'rest_framework_simplejwt',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'corsheaders',
-    'user',
-    'utilities',
-    'estate',
-    'invoice',
-    'contract',
-    'wallet',
-    
-]
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
->>>>>>> d6924d33c7f1db3a6075575a6f29985e6ea62065
 
-}
+
 MIDDLEWARE = [
-<<<<<<< HEAD
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -91,16 +64,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-=======
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
->>>>>>> d6924d33c7f1db3a6075575a6f29985e6ea62065
 ]
 
 ROOT_URLCONF = "sha2ah.urls"
@@ -180,7 +143,6 @@ STATIC_URL = "/static/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-<<<<<<< HEAD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
@@ -188,7 +150,3 @@ if "DYNO" in os.environ:
     STATIC_ROOT = "static"
     ALLOWED_HOSTS = ["https://guarded-scrubland-74784.herokuapp.com"]
     DEBUG = False
-=======
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
->>>>>>> d6924d33c7f1db3a6075575a6f29985e6ea62065
