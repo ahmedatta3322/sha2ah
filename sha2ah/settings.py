@@ -155,4 +155,5 @@ if "DYNO" in os.environ:
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
   'http://www.sha2ah.com',
+  'https://www.sha2ah.com'
 )
