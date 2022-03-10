@@ -9,7 +9,7 @@ class Estate(models.Model):
     # estate_type = models.CharField(choices=[("residential" , "residential")], max_length=50)
     number_of_floors = models.IntegerField()
     units_per_floor = models.IntegerField()
-    # estate_type = models.ForeignKey("estate.EstateType", on_delete=models.PROTECT)
+    estate_type = models.ForeignKey("estate.EstateType", on_delete=models.PROTECT ,default=1)
     def __str__(self) -> str:
         return self.name
 class Unit(models.Model):
