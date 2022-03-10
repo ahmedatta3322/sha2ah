@@ -151,7 +151,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if "DYNO" in os.environ:
     STATIC_ROOT = "static"
-    ALLOWED_HOSTS = ["guarded-scrubland-74784.herokuapp.com" ,"http://www.sha2ah.com",
+    ALLOWED_HOSTS = ["http://localhost:3001","guarded-scrubland-74784.herokuapp.com" ,"http://www.sha2ah.com",
    "https://www.sha2ah.com"]
     DEBUG = True
 CORS_ORIGIN_ALLOW_ALL = True
