@@ -152,8 +152,8 @@ if "DYNO" in os.environ:
     STATIC_ROOT = "static"
     ALLOWED_HOSTS = ["guarded-scrubland-74784.herokuapp.com"]
     DEBUG = True
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-  'http://www.sha2ah.com',
-  'https://www.sha2ah.com'
-)
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = (
+#   'http://www.sha2ah.com',
+#   'https://www.sha2ah.com'
+# )
