@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "utilities",
     "estate",
     "contract",
+    "corsheaders",
 ]
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware"
 ]
 
 ROOT_URLCONF = "sha2ah.urls"
@@ -150,3 +152,6 @@ if "DYNO" in os.environ:
     STATIC_ROOT = "static"
     ALLOWED_HOSTS = ["guarded-scrubland-74784.herokuapp.com"]
     DEBUG = True
+CORS_ORIGIN_WHITELIST = (
+  'http://www.sha2ah.com/',
+)
