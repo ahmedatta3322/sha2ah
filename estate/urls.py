@@ -1,12 +1,13 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from estate.views import EstateViewSet, UnitViewSet
+from estate.views import EstateViewSet, UnitViewSet,EstateTypesViewSet
 
 router = routers.SimpleRouter()
-# router.register(r"units", UnitViewSet)
-router.register(r"", EstateViewSet)
-
+router.register(r"unites", UnitViewSet)
+router.register(r"estates", EstateViewSet)
+router.register(r"estatetypes", EstateTypesViewSet)
 urlpatterns = [
     path("", include(router.urls)),
+  
 ]
