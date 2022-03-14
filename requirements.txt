@@ -33,3 +33,7 @@ tomli==2.0.1
 virtualenv==20.13.3
 virtualenv-clone==0.5.7
 whitenoise==6.0.0
+cryptography~=2.8
+drf-jwt~=1.13.3
+pyjwt~=1.7.1
+requests~=2.22.0

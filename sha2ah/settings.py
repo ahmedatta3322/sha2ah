@@ -52,7 +52,20 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-    ]
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_jwt.authentication.JSONWebTokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ),
+}
+JWT_AUTH = {
+    "JWT_PAYLOAD_GET_USERNAME_HANDLER": "auth0authorization.utils.jwt_get_username_from_payload_handler",
+    "JWT_DECODE_HANDLER": "auth0authorization.utils.jwt_decode_token",
+    "JWT_ALGORITHM": "RS256",
+    "JWT_AUDIENCE": "https://guarded-scrubland-74784.herokuapp.com/",
+    "JWT_ISSUER": "https://dev-y10hpogc.us.auth0.com/",
+    "JWT_AUTH_HEADER_PREFIX": "Bearer",
 }
 
 
@@ -64,9 +77,13 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.auth.middleware.RemoteUserMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-   
+]
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "django.contrib.auth.backends.RemoteUserBackend",
 ]
 
 ROOT_URLCONF = "sha2ah.urls"
@@ -123,7 +140,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-APPEND_SLASH=False
+APPEND_SLASH = False
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -151,8 +168,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if "DYNO" in os.environ:
     STATIC_ROOT = "static"
-    ALLOWED_HOSTS = ["http://localhost:3001","guarded-scrubland-74784.herokuapp.com" ,"http://www.sha2ah.com",
-   "https://www.sha2ah.com"]
+    ALLOWED_HOSTS = [
+        "http://localhost:3001",
+        "guarded-scrubland-74784.herokuapp.com",
+        "http://www.sha2ah.com",
+        "https://www.sha2ah.com",
+    ]
     DEBUG = True
 CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = (
