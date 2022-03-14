@@ -10,9 +10,6 @@ def jwt_get_username_from_payload_handler(payload):
     return username
 
 
-# auth0authorization/utils.py
-
-
 def jwt_decode_token(token):
     header = jwt.get_unverified_header(token)
     jwks = requests.get(
