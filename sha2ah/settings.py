@@ -123,15 +123,15 @@ WSGI_APPLICATION = "sha2ah.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "sha2ah",
+    #     "USER": "postgres",
+    #     "PASSWORD": "ahmedloa2002",
+    #     "HOST": "localhost",
+    #     "PORT": "5432",
+    # },
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "sha2ah",
-        "USER": "postgres",
-        "PASSWORD": "ahmedloa2002",
-        "HOST": "localhost",
-        "PORT": "5432",
-    },
-    "production": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "d7mt63je06bjrc",
         "USER": "reaoxbfpljnxnk",
