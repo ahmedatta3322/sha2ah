@@ -20,5 +20,6 @@ urlpatterns = [
     path("grappelli/", include("grappelli.urls")),
     path("admin/", admin.site.urls),
     path("", include("estate.urls")),
+    path("", include("renter.urls")),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]

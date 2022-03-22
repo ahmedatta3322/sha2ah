@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "utilities",
     "estate",
     "contract",
+    "renter",
     "corsheaders",
 ]
 REST_FRAMEWORK = {
@@ -66,7 +67,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-   
 ]
 
 ROOT_URLCONF = "sha2ah.urls"
@@ -96,12 +96,20 @@ WSGI_APPLICATION = "sha2ah.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
+        "NAME": "sha2ah",
+        "USER": "postgres",
+        "PASSWORD": "ahmedloa2002",
+        "HOST": "localhost",
+        "PORT": "5432",
+    },
+    "production": {
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": "d7mt63je06bjrc",
         "USER": "reaoxbfpljnxnk",
         "PASSWORD": "25a99648d67d39abb646eea776258a11e91462b06ac944b9dba7a0e21bba9406",
         "HOST": "ec2-3-224-157-224.compute-1.amazonaws.com",
         "PORT": "5432",
-    }
+    },
 }
 
 
@@ -123,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-APPEND_SLASH=False
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -151,8 +159,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 if "DYNO" in os.environ:
     STATIC_ROOT = "static"
-    ALLOWED_HOSTS = ["http://localhost:3001","guarded-scrubland-74784.herokuapp.com" ,"http://www.sha2ah.com",
-   "https://www.sha2ah.com"]
+    ALLOWED_HOSTS = [
+        "http://localhost:3001",
+        "guarded-scrubland-74784.herokuapp.com",
+        "http://www.sha2ah.com",
+        "https://www.sha2ah.com",
+    ]
     DEBUG = True
 CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = (
